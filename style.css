@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+header{
+    text-align: center;
+}
+
+header>h1 {
+    margin-bottom: 1rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallows{
+    position: relative;
+}
+
+.four{
+    background-color: black;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    left: 150px;
+    z-index: 2;
+}
+
+.three{
+    background-color: aqua;
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    top: 40;
+}
+
+.two{
+    background-color: aqua;
+    width: 10px;
+    height: 300px;
+    position: absolute;
+    bottom: 200;
+}
+
+.one{
+    background-color: black;
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    z-index: 2;
+    top: 300px;
+    right: 2;
+}
