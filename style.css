@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid #fff; */
+}
+
+body {
+    background-color: #2F4858;
+    color: white;
 }
 
 header{
@@ -11,49 +16,144 @@ header{
 
 header>h1 {
     margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+header>p {
+    font-size: 2rem;
 }
 
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 5rem;
+    margin-top: 5rem;
 }
 
 .gallows{
     position: relative;
+    height: 400px;
+    width: 400px;
+    display:flex;
+    justify-content: flex-start;
 }
 
 .four{
-    background-color: black;
+    background-color: #ffac30;
     width: 10px;
-    height: 60px;
+    height: 50px;
     position: absolute;
-    left: 150px;
-    z-index: 2;
+    left: 210px;
 }
 
 .three{
-    background-color: aqua;
-    width: 150px;
+    background-color: #ffac30;
+    width: 130px;
     height: 10px;
     position: absolute;
-    top: 40;
+    left: 80px;
 }
 
 .two{
-    background-color: aqua;
+    background-color: #ffac30;
     width: 10px;
-    height: 300px;
+    height: 350px;
     position: absolute;
-    bottom: 200;
+    left: 70px;
 }
 
 .one{
-    background-color: black;
-    width: 100px;
+    background-color: #ffac30;
+    width: 150px;
     height: 10px;
     position: absolute;
-    z-index: 2;
-    top: 300px;
+    top: 350px;
     right: 2;
+}
+
+.word{
+    margin-top: 3rem;
+}
+
+.word>p {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.head{
+    width: 75px;
+    height: 75px;
+    border: 8px solid #ffac30;
+    border-radius: 50%;
+    position: absolute;
+    left: 177px;
+    top: 50px;
+    display: none;
+}
+
+.body{
+    background-color: #ffac30;
+    width: 10px;
+    height: 150px;
+    position: absolute;
+    left: 210px;
+    top: 120px;
+    display: none;
+}
+
+.arm1 {
+    background-color: #ffac30;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    left: 190px;
+    top: 120px;
+    transform: rotate(135deg);
+    display: none;
+}
+
+.arm2 {
+    background-color: #ffac30;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    left: 230px;
+    top: 120px;
+    transform: rotate(225deg);
+    display: none;
+}
+
+.leg1 {
+    background-color: #ffac30;
+    width: 10px;
+    height: 70px;
+    position: absolute;
+    left: 185px;
+    top: 255px;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.leg2 {
+    background-color: #ffac30;
+    width: 10px;
+    height: 70px;
+    position: absolute;
+    left: 235px;
+    top: 255px;
+    transform: rotate(135deg);
+    display: none;
+}
+
+.feedback {
+    height: fit-content;
+    text-align: center;
+}
+
+.feedback ul {
+    list-style: none;
+    font-size: 2rem;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
 }
