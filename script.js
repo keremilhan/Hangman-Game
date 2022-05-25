@@ -1,4 +1,6 @@
 const wordDOM = document.querySelector(".word");
+const wrongLettersListDOM = document.querySelector(".wrong-letters-list");
+const notificationContainer = document.querySelector('.notification-container');
 
 
 const words = ["python", "javascript", "java", "html"];
@@ -11,26 +13,46 @@ let randomWordArray = randomWord.split("");
 let correctLetters = [];
 let wrongLetters = [];
 
-function displayWord() {
+function loading() {
     wordDOM.innerHTML = `${randomWord.split('').map(letter => `<p></p>`).join("")}`;
 }
 
-displayWord();
+loading();
 
-
-function change(number){
-    wordDOM.innerHTML = `${randomWordArray.map(letter => `<p>${correctLetters.includes(letter) ? letter : ""}</p>`).join("")}`;
-    const innerWord = wordDOM.innerText.replace(/\n/g, "");   
+function displayWord() {
+    wordDOM.innerHTML = `${randomWordArray.map(letter => `<p>${correctLetters.includes(letter) ? letter.toLocaleUpperCase("en") : ""}</p>`).join("")}`;
 }
 
 
 window.addEventListener("keydown",(e) => {
     const letter = e.key
     if(randomWord.includes(letter)){
-        console.log(randomWordArray.indexOf(e.key))
-        change(randomWordArray.indexOf(e.key))
+        if(correctLetters.includes(letter)){
+            showNotification();
+            console.log(correctLetters)
+        }else{
+            correctLetters.push(letter)
+            displayWord();
+        }
     }else{
-        alert("not included")
+        if(wrongLetters.includes(letter)){
+            showNotification();
+        }else{
+            wrongLetters.push(letter)
+            console.log("wrong",wrongLetters)
+            updateWrongLetters();
+        }
     }
 })
 
+function updateWrongLetters(){
+    wrongLettersListDOM.innerHTML = wrongLetters.map(letter => `<li>${letter.toLocaleUpperCase("en")}</li>`)
+}
+
+function showNotification() {
+    console.log("show Notification");
+    notificationContainer.classList.add("show");
+    setTimeout(() => {
+        notificationContainer.classList.remove("show");
+    }, 2000);
+}

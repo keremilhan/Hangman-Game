@@ -163,3 +163,26 @@ header>p {
     width: fit-content;
     height: fit-content;
 }
+
+
+.notification-container h1{
+    font-size: 1rem;
+}
+
+.notification-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 33.3%;
+    height: 3rem;
+    position: absolute;
+    left: 33.3%;
+    background-color: #5F788A;
+    top: -50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.notification-container.show {
+    transform: translateY(50px);
+}
