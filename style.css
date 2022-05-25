@@ -36,6 +36,7 @@ header>p {
     width: 400px;
     display:flex;
     justify-content: flex-start;
+    margin-right: 4rem;
 }
 
 .four{
@@ -154,6 +155,7 @@ header>p {
 .feedback {
     height: fit-content;
     text-align: center;
+    margin-right: 3rem;
 }
 
 .feedback ul {

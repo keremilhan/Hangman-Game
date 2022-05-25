@@ -21,7 +21,15 @@ loading();
 
 function displayWord() {
     wordDOM.innerHTML = `${randomWordArray.map(letter => `<p>${correctLetters.includes(letter) ? letter.toLocaleUpperCase("en") : ""}</p>`).join("")}`;
+
+    const innerWord = wordDOM.innerText.replace(/\n/g, "");
+
+    if(innerWord === randomWord.toLocaleUpperCase("en")){
+        console.log("You win")
+    }
 }
+
+
 
 
 window.addEventListener("keydown",(e) => {
